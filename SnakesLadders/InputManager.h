@@ -1,5 +1,5 @@
 //
-//  main.m
+//  InputManager.h
 //  SnakesLadders
 //
 //  Created by Kevin Cleathero on 2017-06-04.
@@ -8,12 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        do{
-            
-            
-        }while(1);
-    }
-    return 0;
-}
+@interface InputManager : NSObject
+
++ (NSString *)parseUserInput;
+
+@end
