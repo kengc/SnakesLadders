@@ -10,9 +10,18 @@
 
 @implementation Player
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _currentSquare = 0;
+    }
+    return self;
+}
 
 -(void)Roll{
     NSNumber *squareNum = [NSNumber numberWithUnsignedInt:arc4random_uniform(6) + 1];
-    NSLog(@"rand num is: %@", squareNum);
+    self.currentSquare += [squareNum integerValue];
+    NSLog(@"rand num is: %ld", (long)self.currentSquare);
 }
 @end
