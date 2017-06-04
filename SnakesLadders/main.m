@@ -15,18 +15,20 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         [InputManager dispayInstructions];
-        
         //only need to creat one player so outside of loop
         Player *player = [[Player alloc] init];
+        BOOL gameOver = NO;
         
         do{
-            
             NSString *userInput = [InputManager parseUserInput];
             if([userInput isEqualToString:@"r"]){
-                [player Roll];
+                gameOver = [player Roll];
+                if(gameOver){
+                    NSLog(@"Congrats you won Snakes & Ladders!");
+                }
             }
 
-        }while(1);
+        }while(!gameOver);
     }
     return 0;
 }

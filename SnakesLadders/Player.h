@@ -13,8 +13,9 @@
 @property (nonatomic) NSNumber *currentSquare;
 @property (nonatomic) NSDictionary *gameLogic;
 @property (nonatomic) NSString *output;
+@property (nonatomic) BOOL gameOver;
 
--(void)Roll;
+-(BOOL)Roll;
 -(void)printRollAndResult:(NSNumber *)squarenum andWith:(NSNumber *)currentsquare;
 
 @end

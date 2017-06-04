@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        _gameOver = NO;
         _currentSquare = 0;
         _gameLogic = [[NSDictionary alloc] initWithObjectsAndKeys:
     [NSNumber numberWithInt:14],[NSNumber numberWithInt:4],
@@ -29,10 +30,11 @@
     [NSNumber numberWithInt:75],[NSNumber numberWithInt:95],
     [NSNumber numberWithInt:78],[NSNumber numberWithInt:99], nil];
     }
+    
     return self;
 }
 
--(void)Roll{
+-(BOOL)Roll{
     
     NSNumber *changeToSquare;
     
@@ -42,7 +44,11 @@
     [self printRollAndResult:squareNum andWith:currentSquare];
  
     self.currentSquare = currentSquare;
-
+    
+    if([currentSquare integerValue] >= 100){
+        return YES;
+    }
+    
     for(NSNumber *square in self.gameLogic)
     {
         
@@ -53,19 +59,20 @@
             
             if([currentSquare integerValue] < [changeToSquare integerValue])
             {
-               NSLog(@"Staiware! Up you go");
+               NSLog(@"Stairway! Up you go");
                NSLog(@"You jumped from %ld to %ld", [self.currentSquare integerValue], [changeToSquare integerValue]);
                self.currentSquare = changeToSquare;
                 
             } else
             {
-              NSLog(@"Uh-oh a SNAKE! Down you go!: %ld", [self.currentSquare integerValue]);
+              NSLog(@"Uh-oh a SNAKE! Down you go!");
               NSLog(@"You jumped from %ld to %ld", [self.currentSquare integerValue], [changeToSquare integerValue]);
               //If there is no match set currentSquare to the new rolled value.
               self.currentSquare = changeToSquare;
             }
         }
     }
+    return NO;
 }
 
 -(void)printRollAndResult:(NSNumber *)squarenum andWith:(NSNumber *)currentsquare
