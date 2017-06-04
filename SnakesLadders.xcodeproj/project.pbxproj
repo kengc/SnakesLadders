@@ -10,6 +10,7 @@
 		73CD2AA81EE49AEB000636E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AA71EE49AEB000636E1 /* main.m */; };
 		73CD2AB01EE49D9D000636E1 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AAF1EE49D9D000636E1 /* InputManager.m */; };
 		73CD2AB31EE4A0A5000636E1 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AB21EE4A0A5000636E1 /* Player.m */; };
+		73CD2AB61EE4CC4B000636E1 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD2AB51EE4CC4B000636E1 /* PlayerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		73CD2AAF1EE49D9D000636E1 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 		73CD2AB11EE4A0A5000636E1 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		73CD2AB21EE4A0A5000636E1 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		73CD2AB41EE4CC4B000636E1 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		73CD2AB51EE4CC4B000636E1 /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 			children = (
 				73CD2AA71EE49AEB000636E1 /* main.m */,
 				73CD2AB11EE4A0A5000636E1 /* Player.h */,
+				73CD2AB41EE4CC4B000636E1 /* PlayerManager.h */,
+				73CD2AB51EE4CC4B000636E1 /* PlayerManager.m */,
 				73CD2AB21EE4A0A5000636E1 /* Player.m */,
 				73CD2AAE1EE49D9D000636E1 /* InputManager.h */,
 				73CD2AAF1EE49D9D000636E1 /* InputManager.m */,
@@ -131,6 +136,7 @@
 			files = (
 				73CD2AB01EE49D9D000636E1 /* InputManager.m in Sources */,
 				73CD2AB31EE4A0A5000636E1 /* Player.m in Sources */,
+				73CD2AB61EE4CC4B000636E1 /* PlayerManager.m in Sources */,
 				73CD2AA81EE49AEB000636E1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,9 @@
     
     NSString *trimmed = [inputString stringByTrimmingCharactersInSet:characterSet];
     
-    return trimmed;
+    NSString *lowered = [trimmed lowercaseString];
+    
+    return lowered;
 }
 
 

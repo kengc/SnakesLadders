@@ -21,11 +21,13 @@ int main(int argc, const char * argv[]) {
         
         do{
             NSString *userInput = [InputManager parseUserInput];
-            if([userInput isEqualToString:@"r"]){
+            if([userInput isEqualToString:@"r"] || [userInput isEqualToString:@"roll"]){
                 gameOver = [player Roll];
                 if(gameOver){
                     NSLog(@"Congrats you won Snakes & Ladders!");
                 }
+            } else if([userInput isEqualToString:@"quit"] || [userInput isEqualToString:@"q"]){
+                gameOver = YES;
             }
 
         }while(!gameOver);
