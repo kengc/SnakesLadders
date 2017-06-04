@@ -14,7 +14,7 @@
 + (NSString *)parseUserInput{
     char inputChars[255];
     
-    NSLog(@"action: ");
+    NSLog(@"(r)oll: ");
     fgets(inputChars, 255, stdin);
     
     NSString *inputString = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
@@ -25,6 +25,14 @@
     
     return trimmed;
 }
+
+
++ (void)dispayInstructions{
+    
+    NSLog(@"Welcome to Snakes & Ladders \n ");
+    NSLog(@"Type r to roll \n ");
+}
+
 
 
 @end

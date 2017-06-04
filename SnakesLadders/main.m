@@ -7,12 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "InputManager.h"
+#include "Player.h"
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        [InputManager dispayInstructions];
+        
+        //only need to creat one player so outside of loop
+        Player *player = [[Player alloc] init];
+        
         do{
             
-            
+            NSString *userInput = [InputManager parseUserInput];
+            if([userInput isEqualToString:@"r"]){
+                [player Roll];
+            }
+
         }while(1);
     }
     return 0;

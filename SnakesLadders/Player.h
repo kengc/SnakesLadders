@@ -1,5 +1,5 @@
 //
-//  InputManager.h
+//  Player.h
 //  SnakesLadders
 //
 //  Created by Kevin Cleathero on 2017-06-04.
@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface InputManager : NSObject
+@interface Player : NSObject
 
-+ (NSString *)parseUserInput;
-+ (void)dispayInstructions;
+@property (nonatomic) NSInteger currentSquare;
+
+-(void)Roll;
 
 @end
