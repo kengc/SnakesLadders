@@ -10,9 +10,11 @@
 
 @interface Player : NSObject
 
-@property (nonatomic) NSInteger currentSquare;
+@property (nonatomic) NSNumber *currentSquare;
 @property (nonatomic) NSDictionary *gameLogic;
+@property (nonatomic) NSString *output;
 
 -(void)Roll;
+-(void)printRollAndResult:(NSNumber *)squarenum andWith:(NSNumber *)currentsquare;
 
 @end
