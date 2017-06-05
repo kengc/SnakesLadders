@@ -40,7 +40,6 @@
     NSNumber *changeToSquare;
     
     NSNumber *squareNum = [NSNumber numberWithUnsignedInt:arc4random_uniform(6) + 1];
-    //NSNumber *currentSquare = [NSNumber numberWithInteger:([self.currentSquare integerValue] + [squareNum integerValue])];
     NSNumber *currentSquare = [NSNumber numberWithInteger:([player.currentSquare integerValue] + [squareNum integerValue])];
     
     player.currentSquare = currentSquare;
@@ -78,18 +77,14 @@
     return NO;
 }
 
--(void)Output{
-    //
-}
 
 -(void)Output:(Player *)player{
-    
+        NSLog(@"Congrats %@ you won Snakes & Ladders!", player.name);
 }
 
 -(void)printRollResult:(NSNumber *)squarenum andWith:(NSNumber *)currentsquare for:(Player *)player
 {
   NSLog(@"%@ rolled a:  %ld", player.name, [squarenum integerValue]);
-  //NSLog(@"%@ landed on: %ld", player.name, [currentsquare integerValue]);
   NSLog(@"%@ landed on: %ld", player.name, [player.currentSquare integerValue]);
 }
 
