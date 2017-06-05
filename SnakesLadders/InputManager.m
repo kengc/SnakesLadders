@@ -48,11 +48,19 @@
         NSCharacterSet *characterSet2 = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_!@#$%^&*()_+}{[]|/?<>:';/.,-="];
         
         NSRange r = [trimmed rangeOfCharacterFromSet:characterSet2];
+        
         if(r.location != NSNotFound){
             continuePrompt = YES; //non numeric found in input
         } else {
-            continuePrompt = NO; //all numbers then lets get out of here
+            
+            if([trimmed isEqualToString:@"0"]){
+                continuePrompt = YES; //no players is unacceptable
+            } else {
+                continuePrompt = NO; //all numbers then lets get out of here
+            }
+            
         }
+        
     }while(continuePrompt);
     
     num = [trimmed integerValue];

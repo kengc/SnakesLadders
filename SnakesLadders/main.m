@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #include "InputManager.h"
-//#include "Player.h"
 #import "PlayerManager.h"
+
+#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -19,8 +20,12 @@ int main(int argc, const char * argv[]) {
         [InputManager dispayInstructions];
         //only need to creat one player so outside of loop
         
+        Player *player = [[Player alloc] init];
+        
         PlayerManager *players = [[PlayerManager alloc] init];
         //Player *player = [[Player alloc] init];
+        
+        players.delegate = player;
         
         [players createPlayers:[InputManager parseplayerNumInput]];
         
@@ -29,9 +34,11 @@ int main(int argc, const char * argv[]) {
             NSString *userInput = [InputManager parseUserInput];
             if([userInput isEqualToString:@"r"] || [userInput isEqualToString:@"roll"]){
                //gameOver = [player Roll];
-                if(gameOver){
-                    NSLog(@"Congrats you won Snakes & Ladders!");
-                }
+                gameOver = [players Roll];
+//                if(gameOver){
+//                    //NSLog(@"Congrats you won Snakes & Ladders!");
+//                    
+//                }
             } else if([userInput isEqualToString:@"quit"] || [userInput isEqualToString:@"q"]){
                 gameOver = YES;
             }
