@@ -28,6 +28,37 @@
     return lowered;
 }
 
++ (NSInteger)parseplayerNumInput{
+    
+    char inputChars[255];
+    BOOL continuePrompt = NO;
+    NSInteger num;
+    NSString *trimmed;
+    
+    do{
+        NSLog(@"How many players?: ");
+        fgets(inputChars, 255, stdin);
+        
+        NSString *inputString = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
+        
+        NSCharacterSet *characterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        
+        trimmed = [inputString stringByTrimmingCharactersInSet:characterSet];
+        
+        NSCharacterSet *characterSet2 = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_!@#$%^&*()_+}{[]|/?<>:';/.,-="];
+        
+        NSRange r = [trimmed rangeOfCharacterFromSet:characterSet2];
+        if(r.location != NSNotFound){
+            continuePrompt = YES; //non numeric found in input
+        } else {
+            continuePrompt = NO; //all numbers then lets get out of here
+        }
+    }while(continuePrompt);
+    
+    num = [trimmed integerValue];
+    
+    return num;
+}
 
 + (void)dispayInstructions{
     

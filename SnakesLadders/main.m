@@ -8,21 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #include "InputManager.h"
-#include "Player.h"
-
+//#include "Player.h"
+#import "PlayerManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        BOOL gameOver = NO;
+        
         [InputManager dispayInstructions];
         //only need to creat one player so outside of loop
-        Player *player = [[Player alloc] init];
-        BOOL gameOver = NO;
+        
+        PlayerManager *players = [[PlayerManager alloc] init];
+        //Player *player = [[Player alloc] init];
+        
+        [players createPlayers:[InputManager parseplayerNumInput]];
+        
         
         do{
             NSString *userInput = [InputManager parseUserInput];
             if([userInput isEqualToString:@"r"] || [userInput isEqualToString:@"roll"]){
-                gameOver = [player Roll];
+               //gameOver = [player Roll];
                 if(gameOver){
                     NSLog(@"Congrats you won Snakes & Ladders!");
                 }

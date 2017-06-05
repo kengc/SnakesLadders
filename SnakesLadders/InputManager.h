@@ -11,6 +11,7 @@
 @interface InputManager : NSObject
 
 + (NSString *)parseUserInput;
++ (NSInteger)parseplayerNumInput;
 + (void)dispayInstructions;
 
 @end

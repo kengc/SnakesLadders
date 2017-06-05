@@ -67,9 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				73CD2AA71EE49AEB000636E1 /* main.m */,
-				73CD2AB11EE4A0A5000636E1 /* Player.h */,
 				73CD2AB41EE4CC4B000636E1 /* PlayerManager.h */,
 				73CD2AB51EE4CC4B000636E1 /* PlayerManager.m */,
+				73CD2AB11EE4A0A5000636E1 /* Player.h */,
 				73CD2AB21EE4A0A5000636E1 /* Player.m */,
 				73CD2AAE1EE49D9D000636E1 /* InputManager.h */,
 				73CD2AAF1EE49D9D000636E1 /* InputManager.m */,
